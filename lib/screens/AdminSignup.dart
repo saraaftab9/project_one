@@ -25,7 +25,7 @@ class _AdminSignupState extends State<AdminSignup> {
           Padding(
             padding: const EdgeInsets.only(top: 30, left: 16),
             child: Text(
-              'Sign Up',
+              'Admin Sign Up',
               style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -36,7 +36,7 @@ class _AdminSignupState extends State<AdminSignup> {
           Padding(
             padding: const EdgeInsets.only(left: 16, bottom: 4),
             child: Text(
-              'Sign up now to register your\nfarmhouse or hotels withus ',
+              'Sign up now to register your\nfarmhouse or hotels with us ',
               style: TextStyle(fontSize: 16, fontFamily: 'DM Sans'),
             ),
           ),
@@ -54,45 +54,6 @@ class _AdminSignupState extends State<AdminSignup> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Color(0xFF01C000),
-                              width: 2.0,
-                            ),
-                          ),
-                          child: CircleAvatar(
-                            radius: 60,
-                            foregroundColor: Colors.green,
-                            backgroundImage: AssetImage('images/bg_1.png'),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          right: 4,
-                          child: Container(
-                            padding: EdgeInsets.all(4),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              shape: BoxShape.circle,
-                            ),
-                            child: SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: SvgPicture.asset(
-                                'assets/icons/camera.svg',
-                                fit: BoxFit.scaleDown,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     SizedBox(height: 16),
                     TextField(
                       decoration: InputDecoration(
