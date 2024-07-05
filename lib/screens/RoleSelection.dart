@@ -60,6 +60,9 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
               ),
               child: Column(
                 children: <Widget>[
+                  SizedBox(
+                    height: 50,
+                  ),
                   ListTile(
                     title: const Text(
                       'Admin',
@@ -90,7 +93,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
                       activeColor: Colors.green,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 60),
                   Button(
                     height: 50,
                     label: "Submit",

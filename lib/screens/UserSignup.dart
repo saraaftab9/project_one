@@ -36,7 +36,7 @@ class _UserSignupState extends State<UserSignup> {
           Padding(
             padding: const EdgeInsets.only(left: 16, bottom: 4),
             child: Text(
-              'Sign up now to register your\nfarmhouse or hotels with us ',
+              'Sign up now to register with us ',
               style: TextStyle(fontSize: 16, fontFamily: 'DM Sans'),
             ),
           ),
