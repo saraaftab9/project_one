@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_one/screens/AdminHome.dart';
 import 'package:project_one/screens/AdminSignup.dart';
 import 'package:project_one/screens/UserSignup.dart';
 
@@ -120,7 +121,7 @@ class _LoginState extends State<Login> {
                           // Navigator.pushReplacement(
                           //   context,
                           //   MaterialPageRoute(
-                          //       builder: (context) => OtpScreen()),
+                          //       builder: (context) => ForgetPass()),
                           // );
                         },
                         child: const Text(
@@ -137,7 +138,13 @@ class _LoginState extends State<Login> {
                     Button(
                         height: 50,
                         width: double.infinity,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AdminHome()),
+                          );
+                        },
                         label: 'Login'),
                     const SizedBox(height: 16),
                     Row(

@@ -11,109 +11,77 @@ class _AdminHomeState extends State<AdminHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
-          padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFFC9D4E8),
-                  Color(0xF0B1B8C0),
-                ],
-              ),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40), topRight: Radius.circular(40))),
+      appBar: AppBar(
+        title: Text('Admin Dashboard'),
+        backgroundColor: Colors.green,
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: EdgeInsets.all(16.0),
+        crossAxisSpacing: 16.0,
+        mainAxisSpacing: 16.0,
+        children: <Widget>[
+          DashboardCard(
+            title: 'Reservations',
+            icon: Icons.calendar_today,
+            onTap: () {},
+          ),
+          DashboardCard(
+            title: 'Rooms',
+            icon: Icons.hotel,
+            onTap: () {},
+          ),
+          DashboardCard(
+            title: 'Inventory',
+            icon: Icons.inventory,
+            onTap: () {},
+          ),
+          DashboardCard(
+            title: 'Cleaning Checklists',
+            icon: Icons.cleaning_services,
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class DashboardCard extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const DashboardCard({
+    required this.title,
+    required this.icon,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
           child: Column(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => Requests()),
-                  // );
-                },
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  height: 60,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xFF0F1E3D),
-                        Color(0xF01B63A8),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Requests',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Icon(
+                icon,
+                size: 50,
+                color: Colors.green,
               ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  height: 60,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xFF1B253A),
-                        Color(0xFF190E8C),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Edit MCQS',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => AddMcq()),
-                  // );
-                },
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  height: 60,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xFF041352),
-                        Color(0xFF1F4FA2),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Add MCQS',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
+              SizedBox(height: 16),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
